@@ -63,9 +63,10 @@ namespace WinFormsApp1
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             double num = CheckPrice();
-            if (num == 0) { MessageBox.Show($"Refund: {price_txtbox.Text} AZN"); price_txtbox.Text = ""; }
+            if (num == 0&& price_txtbox.Text.Length != 0) { MessageBox.Show($"Refund: {price_txtbox.Text} AZN"); price_txtbox.Text = ""; }
             else if (price_txtbox.Text.Length != 0 && Convert.ToDouble(price_txtbox.Text) - num >= 0)
             {
+                
                 if (Convert.ToDouble(price_txtbox.Text) - num != 0)
                 {
                     label3.Visible = true;
